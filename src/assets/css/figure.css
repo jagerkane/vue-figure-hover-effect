@@ -1,0 +1,608 @@
+*, *:after, *:before {-webkit-box-sizing: border-box;/* box-sizing: border-box; */}
+.clearfix:before, .clearfix:after { display: table; content: ''; }
+.clearfix:after { clear: both; }
+body{
+    background: #2f3238;
+}
+.show-container{
+    max-width: 1000px;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+.container{
+    display:flex;
+    flex-flow: row wrap;
+    position: relative;
+    
+    justify-content:center;
+}
+
+figure *:after, figure *:before {-webkit-box-sizing: border-box;/* box-sizing: border-box; */}
+.clearfix:before, .clearfix:after { display: table; content: ''; }
+.clearfix:after { clear: both; }
+figure,figcaption{
+    margin: 0;
+    padding: 0;
+}
+/* 所有的动画都在0.35s内完成 */
+.trasition-time{
+    -webkit-transition: opacity 0.35s,-webkit-transform 0.35s;
+    transition: opacity 0.35s,transform 0.35s;
+}
+
+/* Common style */
+figure {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin: 10px 1%;
+    min-width: 450px;
+    max-width: 480px;
+    max-height: 360px;
+    width: 48%;
+    height:auto;
+    background: #3085a3;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+}
+
+figure img {
+    position: relative;
+    display: block;
+    min-height: 100%;
+    max-width: 100%;
+    opacity: 0.8;
+}
+
+figure figcaption {
+    padding: 2em;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.25em;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+figure figcaption::before,
+figure figcaption::after {
+    pointer-events: none;
+}
+
+figure figcaption,
+figure figcaption > a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+figure figcaption > a {
+    z-index: 1000;
+    text-indent: 200%;
+    white-space: nowrap;
+    font-size: 0;
+    opacity: 0;
+}
+
+figure h2 {
+    word-spacing: -0.15em;
+    font-weight: 300;
+}
+
+figure h2 span {
+    font-weight: 800;
+}
+
+figure h2,
+figure p {
+    margin: 0;
+}
+
+figure p {
+    letter-spacing: 1px;
+    font-size: 80.5%;
+}
+
+
+figure.effect-up-slide img {
+    max-width: none;
+    width: -webkit-calc(100% + 50px);
+    width: calc(100% + 50px);
+    opacity: 0.7;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(-40px,0, 0);
+    transform: translate3d(-40px,0,0);
+}
+figure.effect-up-slide figcaption{
+    text-align: left;
+}
+figure.effect-up-slide figcaption > div {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 2em;
+    width: 100%;
+    height: 50%;
+}
+figure.effect-up-slide h2{
+    color: #fff;
+    font-size:2rem;
+}
+figure.effect-up-slide h2,
+figure.effect-up-slide p {
+    -webkit-transform: translate3d(0,40px,0);
+    transform: translate3d(0,40px,0);
+}
+
+figure.effect-up-slide h2 {
+    -webkit-transition: -webkit-transform 0.35s;
+    transition: transform 0.35s;
+}
+
+figure.effect-up-slide p {
+    color: rgba(255,255,255,0.8);
+    opacity: 0;
+}
+
+
+figure.effect-up-slide:hover img,
+figure.effect-up-slide:hover p {
+    opacity: 1;
+}
+
+figure.effect-up-slide:hover img,
+figure.effect-up-slide:hover h2,
+figure.effect-up-slide:hover p {
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+
+figure.effect-up-slide:hover p {
+    -webkit-transition-delay: 0.05s;
+    transition-delay: 0.05s;
+    -webkit-transition-duration: 0.35s;
+    transition-duration: 0.35s;
+}
+
+figure.effect-left-slide figcaption{
+    text-align: left;
+}
+
+figure.effect-left-slide h2 {
+    position: relative;
+    padding: 0.5em 0;
+}
+figure.effect-left-slide p{
+    display: inline-block;
+    margin: 0 0 0.25em;
+    padding: 0.4em 1em;
+    background: rgba(255,255,255,0.9);
+    color: #2f3238;
+    text-transform: none;
+    font-weight: 500;
+    font-size: 75%;
+    -webkit-transform: translate3d(-360px,0,0);
+    transform: translate3d(-360px,0,0)
+}
+figure.effect-left-slide:hover p{
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    opacity: 1;
+}
+figure.effect-left-slide p:first-child{
+    transition-delay: 0.15s;
+    -webkit-transition-delay: 0.15s;
+}
+figure.effect-left-slide p:nth-of-type(2){
+    transition-delay: 0.2s;
+    -webkit-transition-delay: 0.2s;
+}
+figure.effect-left-slide p:nth-of-type(3){
+    transition-delay: 0.25s;
+    -webkit-transition-delay: 0.25s;
+}
+figure.effect-left-slide:hover p :first-child{
+    transition-delay: 0s;
+    -webkit-transition-delay: 0s;
+}
+figure.effect-left-slide:hover p:nth-of-type(2){
+    transition-delay: 0.15s;
+    -webkit-transition-delay: 0.15s;
+}
+figure.effect-left-slide:hover p:nth-of-type(3){
+    transition-delay: 0.2s;
+    -webkit-transition-delay: 0.2s;
+}
+
+figure.effect-left-slide{
+    background: #2f3238;
+}
+figure.effect-left-slide img{
+    -webkit-transform: scale(1, 1);
+    transform: scale(1,1);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+figure.effect-left-slide:hover img{
+    opacity: 0.4;
+    -webkit-transform: scale(1.1, 1.1);
+    transform: scale(1.1,1.1);
+}
+
+figure.effect-milo{
+    background: forestgreen;
+}
+figure.effect-milo img{
+    max-width: none;
+	width: -webkit-calc(100% + 60px);
+	width: calc(100% + 60px);
+	opacity: 1;
+	-webkit-transform: translate3d(-30px,0,0) scale(1.12);
+	transform: translate3d(-30px,0,0) scale(1.12);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+figure.effect-milo:hover img{
+    opacity: 0.5;
+    -webkit-transform:translate3d(0,0,0) scale(1);
+    transform: translate3d(0,0,0) scale(1);
+}
+figure.effect-milo h2 {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	padding: 1em 1.2em;
+}
+figure.effect-milo p{
+    opacity: 0;
+    text-align: right;
+    width: 50%;
+    border-right:1px white solid;
+    padding: 0 10px 0 0;
+    -webkit-transform: translate3d(-50px,0,0);
+    transform: translate3d(-50px,0,0);
+}
+figure.effect-milo:hover p{
+    font-size: 90%;
+    opacity: 1;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+/* --------------------------- */
+figure.effect-chico img{
+    opacity: 1;
+    -webkit-transform: scale(1.2,1.2);
+    transform: scale(1.2,1.2);
+}
+figure.effect-chico:hover img{
+    opacity: 0.5;
+    -webkit-transform: scale(1,1);
+    transform: scale(1,1);
+}
+figure.effect-chico h2{
+    padding: 20% 0 20px 0;
+}
+figure.effect-chico figcaption {
+	padding: 3em;
+}
+
+figure.effect-chico figcaption::before {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	bottom: 30px;
+	left: 30px;
+	border: 1px solid #fff;
+	content: '';
+	-webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    opacity: 0;
+    -webkit-transition: opacity 0.35s,-webkit-transform 0.35s;
+    transition: opacity 0.35s,transform 0.35s;
+}
+figure.effect-chico:hover figcaption::before{
+    content: '';
+    opacity: 1;
+	-webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: opacity 0.35s,-webkit-transform 0.35s;
+    transition: opacity 0.35s,transform 0.35s;
+}
+
+figure.effect-chico p {
+    font-size: 90%;
+    opacity:0;
+	margin: 0 auto;
+	max-width: 200px;
+	-webkit-transform: scale(1.5);
+	transform: scale(1.5);
+}
+
+
+figure.effect-chico:hover p{
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+/* ----------------effect-sarah -------------------- */
+figure.effect-sarah img{
+    opacity: 1;
+    width: calc(100% + 20px);
+    width:-webkit-calc(100% + 20px);
+    -webkit-transform: translate3d(-20px,0,0);
+    transform: translate3d(-20px,0,0);
+    max-width: none;
+}
+figure.effect-sarah:hover img{
+    opacity: 0.6;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+figure.effect-sarah h2,p{
+    text-align: left;
+}
+figure.effect-sarah h2{
+    position: relative;
+    overflow: hidden;
+	padding: 0.5em 0;
+}
+figure.effect-sarah p{
+    opacity: 0;
+    margin-top:1rem;
+    -webkit-transform:translate3d(100px,0,0);
+    transform: translate3d(100px,0,0);
+}
+
+figure.effect-sarah:hover p{
+    opacity: 1;
+    -webkit-transform:translate3d(0,0,0);
+    transform:translate3d(0,0,0);
+}
+figure.effect-sarah span::after{
+    position: absolute;
+    left: 0;
+    bottom:0;
+    width:100%;
+    height:3px;
+    background: white;
+    border: 2px solid white;
+    content:"";
+    -webkit-transform: translate3d(-100%,0,0);
+    transform: translate3d(-100%,0,0);
+    -webkit-transition: -webkit-transform 0.25s;
+    transition: transform 0.25s;
+}
+figure.effect-sarah:hover span::after{
+    -webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+    -webkit-transition:-webkit-transform 0.25s;
+    transition:transform 0.25s;
+}
+/* ---------------effect-dexter------------------------------- */
+figure.effect-dexter{
+    background: #2f3238;
+}
+figure.effect-dexter figcaption::before{
+    position: absolute;
+    border: 7px white solid;
+    height:calc(50% - 30px);
+    height:-webkit-calc(50% - 30px);
+    content: '';
+    top: 30px;
+	right: 30px;
+    left: 30px;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    -webkit-transition: -webkit-transform 0.35s;
+    transition: transform 0.35s;
+    
+}
+figure.effect-dexter:hover figcaption::before{
+    -webkit-transform: translate3d(0,100%,0);
+    transform: translate3d(0,100%,0);
+    -webkit-transition: -webkit-transform 0.35s;
+    transition: transform 0.35s;
+}
+
+figure.effect-dexter:hover p{
+    opacity: 1;
+    font-size: 90%;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+
+figure.effect-dexter p{
+    position: absolute;
+    opacity: 0;
+    right: 60px;
+    left: 60px;
+    bottom: 20%;
+    text-align: left;
+    -webkit-transform: translate3d(0,-100%,0);
+    transform: translate3d(0,-100%,0);
+}
+figure.effect-dexter img{
+    opacity: 1;
+
+}
+figure.effect-dexter:hover img{
+    opacity: 0.5;
+}
+/* ----------------effect-remeo--------------------------- */
+
+figure.effect-remeo {
+	-webkit-perspective: 1000px;
+	perspective: 1000px;
+}
+figure.effect-remeo img{
+    max-width: none;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transform: scale(1.2);
+    -webkit-transform:scale(1.2);
+}
+figure.effect-remeo:hover img{
+    opacity: 0.5;
+    transform: scale(1);
+    -webkit-transform:scale(1);
+}
+figure.effect-remeo h2{
+    position: absolute;
+    width: 100%;
+    padding: .5rem;
+    left: 0;
+    top: 50%;
+    -webkit-transform: translate3d(0,-200%,0);
+    transform: translate3d(0,-200%,0);
+}
+figure.effect-remeo:hover h2{
+    -webkit-transform: translate3d(0,-150%,0);
+    transform: translate3d(0,-150%,0);
+}
+
+figure.effect-remeo figcaption::before,
+figure.effect-remeo figcaption::after {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 80%;
+	height: 1px;
+	background: #fff;
+	content: '';
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: translate3d(-50%,-50%,0);
+	transform: translate3d(-50%,-50%,0);
+}
+figure.effect-remeo:hover figcaption::before {
+	opacity: 0.5;
+	-webkit-transform: translate3d(-50%,-50%,0) rotate(45deg);
+	transform: translate3d(-50%,-50%,0) rotate(45deg);
+}
+
+figure.effect-remeo:hover figcaption::after {
+	opacity: 0.5;
+	-webkit-transform: translate3d(-50%,-50%,0) rotate(-45deg);
+	transform: translate3d(-50%,-50%,0) rotate(-45deg);
+}
+
+
+figure.effect-remeo p{
+    position: absolute;
+    width:100%;
+    left: 0;
+    text-align: center;
+    top: 50%;
+    font-size: 90%;
+    line-height: 2rem;
+    padding:.2rem 2rem;
+    -webkit-transform: translate3d(0,100%,0);
+    transform: translate3d(0,100%,0);
+}
+figure.effect-remeo:hover p{
+    position: absolute;
+    width:100%;
+    left: 0;
+    top: 50%;
+    padding:.2rem 2rem;
+    -webkit-transform: translate3d(0,50%,0);
+    transform: translate3d(0,50%,0);
+}
+/* ----------------effect-sadie---------------- */
+figure.effect-sadie figcaption::before{
+    position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: -webkit-linear-gradient(top, rgba(72,76,97,0) 0%, rgba(72,76,97,0.8) 75%);
+	background: linear-gradient(to bottom, rgba(72,76,97,0) 0%, rgba(72,76,97,0.8) 75%);
+	content: '';
+	opacity: 0;
+	-webkit-transform: translate3d(0,50%,0);
+    transform: translate3d(0,50%,0);
+}
+figure.effect-sadie:hover figcaption::before{
+    opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+figure.effect-sadie:hover figcaption::before{
+   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+   transition: opacity 0.35s,transform 0.35s;
+}
+figure.effect-sadie p{
+    position: absolute;
+    text-align: center;
+	bottom: 0;
+	left: 0;
+    padding: 2em;
+    font-size: 90%;
+	width: 100%;
+	opacity: 0;
+	-webkit-transform: translate3d(0,10px,0);
+	transform: translate3d(0,10px,0);
+}
+figure.effect-sadie:hover p{
+    opacity: 1;
+    -webkit-transform: translate3d(0,0px,0);
+	transform: translate3d(0,0px,0);
+}
+figure.effect-sadie h2{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #484c61;
+    -webkit-tranform: translate3d(0,-50%,0);
+    transform: translate3d(0,-50%,0); 
+}
+figure.effect-sadie:hover h2{
+    color:#fff;
+    -webkit-tranform: translate3d(0,-100%,0);
+    transform: translate3d(0,-100%,0); 
+}
+
+/* ----------------------effect-zoe------------------------------ */
+figure.effect-zoe figcaption{
+    top: auto;
+	bottom: 0;
+	padding: 1em;
+	height: 3.75em;
+	background: #fff;
+	color: #3c4a50;
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+	-webkit-transform: translate3d(0,100%,0);
+	transform: translate3d(0,100%,0);
+}
+figure.effect-zoe h2{
+    float: left;
+}
+figure.effect-zoe p {
+	position: absolute;
+	bottom: 8em;
+	padding: 2em;
+	color: #fff;
+	text-transform: none;
+	font-size: 90%;
+	opacity: 0;
+	-webkit-transition: opacity 0.35s;
+	transition: opacity 0.35s;
+	-webkit-backface-visibility: hidden; /* Fix for Chrome 37.0.2062.120 (Mac) */
+}
+figure.effect-zoe:hover p{
+    opacity: 1;
+}
+figure.effect-zoe:hover figcaption,
+figure.effect-zoe:hover h2,
+figure.effect-zoe:hover {
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
